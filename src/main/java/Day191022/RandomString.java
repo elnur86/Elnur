@@ -1,3 +1,5 @@
+package Day191022;
+
 import java.util.Random;
 public class RandomString {
 
@@ -11,8 +13,8 @@ public class RandomString {
         int check;
         for(int i=0;i<lenght;i++)
         {
-            check =randomCheck.nextInt(2);
-            if(check==0) {ch = (char) (r.nextInt('z'-'a'+1)+'a'); NewString=NewString+ch;}
+            check =randomCheck.nextInt(100);
+            if(check%2==0) {ch = (char) (r.nextInt('z'-'a'+1)+'a'); NewString=NewString+ch;}
             else {ch = (char) (r.nextInt('Z'-'A'+1)+'A'); NewString=NewString+ch;}
 
         }
