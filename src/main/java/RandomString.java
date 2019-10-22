@@ -7,11 +7,14 @@ public class RandomString {
         String NewString;
         NewString="";
         Random r = new Random();
-
+        Random randomCheck=new Random();
+        int check;
         for(int i=0;i<lenght;i++)
         {
-            ch = (char) (r.nextInt(26) + 'a');
-            NewString=NewString+ch;
+            check =randomCheck.nextInt(2);
+            if(check==0) {ch = (char) (r.nextInt('z'-'a'+1)+'a'); NewString=NewString+ch;}
+            else {ch = (char) (r.nextInt('Z'-'A'+1)+'A'); NewString=NewString+ch;}
+
         }
     return NewString;
 
