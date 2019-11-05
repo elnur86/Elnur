@@ -4,7 +4,9 @@ public class MyApp {
 
     public static void main(String[] args) {
 
-        DAO<Person> pps =new DAOPersonHashMap();
+        DAO<Person> pps =
+                new DAOPersonHashMap();
+
 
         Person p1 = new Person(1, "Alex", 33);
         Person p2 = new Person(2, "Natale", 44);
@@ -24,11 +26,11 @@ public class MyApp {
         pps.put(p7);
         pps.put(p8);
 
+        System.out.printf("%s\n",pps.get(5));
 
+        pps.delete(5);
 
-
-
-
-
+        for (Person pr: pps.getAll())
+            System.out.printf("%s\n",pr);
     }
 }

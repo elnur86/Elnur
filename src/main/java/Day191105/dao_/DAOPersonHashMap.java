@@ -10,17 +10,18 @@ public class DAOPersonHashMap implements DAO<Person> {
   // for HashMap implementation
   private Map<Integer, Person> storage = new HashMap<>();
   // for ArrayList implementation
-//  private List<Person> storage2 = new ArrayList<>();
+  private List<Person> storage2 = new ArrayList<>();
 
   @Override
   public void put(Person object) {
-    storage.put()
     storage.put(object.getId(), object);
   }
 
   @Override
   public Person get(int id) {
+    if (storage.containsKey(id))
   return storage.get(id);
+    else throw new IllegalArgumentException("Requested id does not exist");
   }
 
   @Override
@@ -30,8 +31,8 @@ public class DAOPersonHashMap implements DAO<Person> {
 
   @Override
   public List<Person> getAll() {
-    ArrayList<Person> ArrLiPerson = new ArrayList<>(storage.values());
-    return ArrLiPerson;
+    storage2 = new ArrayList<>(storage.values());
+    return storage2;
        // throw new IllegalArgumentException("DAOPersonHashMap:getAll:not yet");
   }
 }
